@@ -49,7 +49,9 @@ func HTMLAllowing(s string, args ...[]string) (string, error) {
 				return "", err
 			}
 		case parser.StartTagToken:
-
+			if token.Data == "br" {
+				buffer.WriteString(" ")
+			}
 			if len(ignore) == 0 && includes(allowedTags, token.Data) {
 				token.Attr = cleanAttributes(token.Attr, allowedAttributes)
 				buffer.WriteString(token.String())
@@ -58,7 +60,9 @@ func HTMLAllowing(s string, args ...[]string) (string, error) {
 			}
 
 		case parser.SelfClosingTagToken:
-
+			if token.Data == "br" {
+				buffer.WriteString(" ")
+			}
 			if len(ignore) == 0 && includes(allowedTags, token.Data) {
 				token.Attr = cleanAttributes(token.Attr, allowedAttributes)
 				buffer.WriteString(token.String())
