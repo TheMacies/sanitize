@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	// parser "code.google.com/p/go.net/html" use golang.org instead of code.google.com
-	"golang.org/x/net/html" 
+	parser "golang.org/x/net/html" 
 )
 
 // Sanitize utf8 html, allowing some tags
