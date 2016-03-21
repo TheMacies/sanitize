@@ -65,7 +65,7 @@ func HTMLAllowing(s string, args ...[]string) (string, error) {
 						u, err := url.Parse(attr.Val)
 						if err == nil {
 							buffer.WriteString(u.Host)
-							buffer.WriteString(u.Path)
+							// buffer.WriteString(u.Path)
 							buffer.WriteString(" ")
 						}
 						break
@@ -110,7 +110,7 @@ func HTMLAllowing(s string, args ...[]string) (string, error) {
 						u, err := url.Parse(text)
 						if err == nil {
 							buffer.WriteString(u.Host)
-							buffer.WriteString(u.Path)
+							// buffer.WriteString(u.Path)
 						} else {
 							buffer.WriteString(cutText(text))
 						}
