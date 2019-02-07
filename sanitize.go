@@ -112,10 +112,10 @@ func HTMLAllowing(s string, args ...[]string) (string, error) {
 							buffer.WriteString(u.Host)
 							// buffer.WriteString(u.Path)
 						} else {
-							buffer.WriteString(cutText(text))
+							buffer.WriteString(text)
 						}
 					} else {
-						buffer.WriteString(cutText(text))
+						buffer.WriteString(text)
 					}
 					buffer.WriteString(" ")
 				}
@@ -129,14 +129,6 @@ func HTMLAllowing(s string, args ...[]string) (string, error) {
 			// We ignore unknown token types by default
 
 		}
-	}
-}
-
-func cutText(s string) string {
-	if len(s) > 30 {
-		return s[0:30]
-	} else {
-		return s
 	}
 }
 
